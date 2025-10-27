@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before, *::after{
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html{
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+button,
+input{
+    font-family: inherit;
+}
+
+
+/* Colors */
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --card-max-width: 40rem;
+    --gutter: 2rem;
+  }
+  
+
+body{
+    font-family: 'Space Mono', monospace;
+    background: var(--light-grayish-cyan);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 3.2rem 1.6rem;
+}
+
+.logo-img{
+    width: 10.6rem;
+    margin-bottom: 3.6rem;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.06));
+}
+
+/* --- TIP CALCULATOR CARD (mobile-first) --- */
+.tip-calculator{
+    background: var(--white);
+    width: 100%;
+    max-width: var(--card-max-width);
+    border-radius: 2rem 2rem 1.2rem 1.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.4rem;
+    min-height: auto;
+}
+
+label,
+.section-title{
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-grayish-cyan);
+    margin-bottom: 0.8rem;
+}
+
+.section-title{
+    margin-top: 1.5rem;
+}
+
+/* --- INPUTS --- */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]{
+    width: 100%;
+    background: var(--very-light-grayish-cyan);
+    text-align: right;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: var(--very-dark-cyan);
+    border-radius: 0.6rem;
+    border: 1px solid transparent;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+input[type="number"]:focus{
+    outline: 2px solid var(--strong-cyan);
+}
+
+/* --- TIP OPTIONS --- */
+.tip-div{margin-bottom: 0.8rem;}
+
+.sr-only{
+    display: none;
+}
+
+/* remove default fieldset border */
+.tip-options{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- TIP BUTTONS --- */
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.buttons button, 
+.buttons input{
+    flex: 1 1 45%;
+    padding: 1rem 0.8rem;
+    border-radius: 0.7rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.6rem;
+    cursor: pointer;
+}
+
+.buttons button{
+    background: var(--very-dark-cyan);
+    color: var(--white);
+    border: none;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+}
+
+.buttons button:hover{
+    background: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    transform: translateY(-2px);
+ }
+
+.buttons input{
+    background: var(--very-light-grayish-cyan);
+    color: var(--dark-grayish-cyan);
+    text-align: center;
+    border: 1px solid transparent; 
+}
+
+.buttons input:focus{
+    outline: 2px solid var(--strong-cyan);
+}
+
+/* --- PEOPLE INPUT --- */  
+.people-div{
+    position: relative;
+    margin-bottom: 0.6rem;
+}
+
+.error-message{
+    display: none;
+    position: absolute;
+    top: 0.2rem;
+    right: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: red;
+}
+
+/* Result Display Styling */
+.output-section{
+    background: var(--very-dark-cyan);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 0.8rem;
+}
+
+.result-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-item p{
+    font-size: 1.3rem;
+    color: var(--very-light-grayish-cyan);
+    margin: 0;
+}
+
+.result-item p span{
+    font-size: 1.1rem;
+    color: var(--grayish-cyan);
+    margin-left: 0.4rem;
+}
+
+.result-item p:last-child,
+.result-item p + p{
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--strong-cyan);
+    margin: 0;
+}
+
+#reset-btn{
+    background: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    margin-top: 1.6rem;
+}
+
+#reset-btn:hover{
+    background: var(--light-grayish-cyan);
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
