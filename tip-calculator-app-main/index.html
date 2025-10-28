@@ -16,13 +16,14 @@
 
  </head>
 <body>
-  <img src="images/logo.svg" class="logo-img" alt="Logo icon">
+  <img src="images/logo.svg" class="logo-img" alt="Splitter logo">
   <main class="tip-calculator">
       <section class="input-section">
         <!--Bill input-->
         <div class="bill-div">
           <label for="bill">Bill</label>
           <input type="number" id="bill" placeholder="0">
+          <img src="images/icon-dollar.svg" alt="dollar icon">
         </div>
         <!--Tip selection-->
         <div class="tip-div">
@@ -30,11 +31,11 @@
           <fieldset class="tip-options">
           <legend class="sr-only">Tip options</legend>
           <div class="buttons">
-            <button type="button" data-value="0.05" onclick="calculateTip()">5%</button>
-            <button type="button" data-value="0.1" onclick="calculateTip()">10%</button>
-            <button type="button" data-value="0.15" onclick="calculateTip()">15%</button>
-            <button type="button" data-value="0.25" onclick="calculateTip()">25%</button>
-            <button type="button" data-value="0.5" onclick="calculateTip()">50%</button>
+            <button type="button" data-value="0.05">5%</button>
+            <button type="button" data-value="0.1">10%</button>
+            <button type="button" data-value="0.15">15%</button>
+            <button type="button" data-value="0.25">25%</button>
+            <button type="button" data-value="0.5">50%</button>
             <input type="number" id="custom-tip" placeholder="Custom">
           </div>
           </fieldset>
@@ -44,6 +45,7 @@
           <label for="people">Number of People</label>
           <span id="error-message" class="error-message">Can't be zero</span>
           <input type="number" id="people" placeholder="0">
+          <img src="images/icon-person.svg" alt="person icon">
         </div>
       </section>
 
