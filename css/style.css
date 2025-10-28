@@ -108,8 +108,23 @@ input[type="number"]:focus{
     outline: 2px solid var(--strong-cyan);
 }
 
+.bill-div,
+.people-div{
+    position: relative;
+    margin-bottom: 1.6rem;
+}
+
+.bill-div img,
+.people-div img{
+    position: absolute;
+    top: 53%;
+    left: 6%;
+    right: auto;
+    transform: translate(-50%);
+}
+
 /* --- TIP OPTIONS --- */
-.tip-div{margin-bottom: 0.8rem;}
+.tip-div{margin-bottom: 2rem;}
 
 .sr-only{
     display: none;
@@ -167,12 +182,7 @@ input[type="number"]:focus{
     outline: 2px solid var(--strong-cyan);
 }
 
-/* --- PEOPLE INPUT --- */  
-.people-div{
-    position: relative;
-    margin-bottom: 0.6rem;
-}
-
+/* --- PEOPLE INPUT ERROR MESSAGE--- */  
 .error-message{
     display: none;
     position: absolute;
